@@ -15,8 +15,8 @@ Inertia::share([
 // Prepare title and content
 $title = get_the_title(get_the_ID());
 
-// Apply all registered hooks,
-// shortcodes, filters, etc...
+// Apply all registered 
+// hooks, shortcodes, filters, etc...
 $content = apply_filters(
     'the_content',
     get_the_content(null, false, get_the_ID())

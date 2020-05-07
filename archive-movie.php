@@ -2,7 +2,14 @@
 
 use BoxyBird\Inertia\Inertia;
 
-// Build movies
+/**
+ * This file may look busy, however it can
+ * be thought of as a 'Controller'. It gives you
+ * a place to handle all your business logic, leaving
+ * your Javacript file easier to reason about.
+ */
+
+// Build movies array
 $movies = array_map(function ($movie) {
     return [
         'id'     => $movie->ID,
@@ -12,7 +19,7 @@ $movies = array_map(function ($movie) {
     ];
 }, $wp_query->posts);
 
-// Build pagination
+// Build pagination array
 $current_page = isset($wp_query->query['paged']) ? (int) $wp_query->query['paged'] : 1;
 $prev_page    = $current_page > 1 ? $current_page - 1 : false;
 $next_page    = $current_page + 1;
@@ -25,6 +32,7 @@ $pagination = [
     'total_movies' => (int) $wp_query->found_posts,
 ];
 
+// Return Inertia view with data
 return Inertia::render('Movies/Index', [
     'movies'     => $movies,
     'pagination' => $pagination

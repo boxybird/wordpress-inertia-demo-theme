@@ -2,6 +2,7 @@
 
 use BoxyBird\Inertia\Inertia;
 
+// Build $movies array
 $movies = array_map(function ($movie) {
     return [
         'id'      => $movie->ID,
