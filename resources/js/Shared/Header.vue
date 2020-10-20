@@ -19,16 +19,16 @@
                 d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"
               />
             </svg>
-            <h1 class="font-bold">{{ $page.site.name }}</h1>
+            <h1 class="font-bold">{{ $page.props.site.name }}</h1>
           </div>
           <p
             class="text-sm tracking-wide uppercase"
-          >{{ $page.site.description }}</p>
+          >{{ $page.props.site.description }}</p>
         </div>
         <ul
           class="font-bold hidden items-center space-x-4 text-gray-700 text-sm tracking-wide uppercase sm:flex"
         >
-          <li v-for="item in $page.primary_menu" :key="item.id">
+          <li v-for="item in $page.props.primary_menu" :key="item.id">
             <inertia-link :href="item.link">{{ item.name }}</inertia-link>
           </li>
         </ul>

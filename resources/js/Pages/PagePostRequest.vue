@@ -54,7 +54,7 @@ export default {
         toastMessage: this.toastMessage
       })
 
-      this.$page.toast_message = data.toast_message
+      this.$page.props.toast_message = data.toast_message
       this.toastMessage = ''
     }
   }

@@ -18,7 +18,7 @@ export default {
   },
   computed: {
     message() {
-      return this.$page.toast_message
+      return this.$page.props.toast_message
     }
   },
   watch: {
